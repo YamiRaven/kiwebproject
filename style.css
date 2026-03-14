@@ -3,14 +3,19 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
 p {
   font-family: "Archivo", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
-
-
 
 
 .archivo-font> {
@@ -55,12 +60,22 @@ nav ul {
     grid-template-areas:
         "sidebar overview"
         "sidebar maincontent"; 
+    align-self: start;
 }
 
 .sidebar {
     grid-area: sidebar;
     position: sticky;
     top: 0;
+    align-self: start;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    list-style-type: none;
 }
 
 .overview {
@@ -77,8 +92,7 @@ nav ul {
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "title title"
-        "images texts"
-        "full full";
+        "images texts";
     gap: 2rem;
 }
 
@@ -103,7 +117,7 @@ nav ul {
     grid-area: texts;
     justify-self: center;
     position: sticky;
-    top: 2rem;
+    top: 6rem;
     align-self: start;
 
     max-width: 45ch;
@@ -112,7 +126,13 @@ nav ul {
 
 
 .imagefull {
-    grid-area: full;
+    margin: 2rem 0 3rem;
+    
+}
+
+.imageside img,
+.imagefull img {
+    width: 100%;
 }
 
 img {
