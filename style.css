@@ -42,35 +42,36 @@ nav ul {
     justify-content: space-around;
 }
 
-/* grid container for side and main content */
-.grid-container {
+
+
+
+.layout {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 250px 1fr;
     gap: 2rem;
     margin: 0 auto;
     padding: 4rem;
     max-width: 100vw;
     grid-template-areas:
-        "sidebar main main main"; /* Define the grid areas for header, navigation, sidebar and main content */
+        "sidebar overview"
+        "sidebar maincontent"; 
 }
 
-
-
-/* Sidebar and Main Content */
-
-aside {
+.sidebar {
     grid-area: sidebar;
     position: sticky;
     top: 0;
 }
 
-main {
-    grid-area: main;
-
-
+.overview {
+    grid-area: overview;
 }
 
-article {
+.maincontent {
+    grid-area: maincontent;
+}
+
+.content-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
