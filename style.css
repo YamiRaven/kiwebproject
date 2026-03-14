@@ -7,7 +7,7 @@ p {
   font-family: "Archivo", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -50,7 +50,7 @@ nav ul {
     grid-template-columns: 250px 1fr;
     gap: 2rem;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 2rem;
     max-width: 100vw;
     grid-template-areas:
         "sidebar overview"
@@ -73,51 +73,46 @@ nav ul {
 
 .content-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas:
-        "subheading subheading subheading"
-        "imageside imageside textside"
-        "imagefull imagefull imagefull";
+        "title title"
+        "images texts"
+        "full full";
+    gap: 2rem;
 }
 
 
 .subheading {
+    grid-area: title;
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
-    position: sticky;
-    top: 0;
-    background-color: white;
     
 }
 
 
-
 .imageside {
-    grid-column: span 2;
-    display: flex;
-    flex-direction: column;
+    grid-area: images;
+    display: grid;
     gap: 1rem;
 
 }
 
 .textside {
-    grid-column: span 1;
+    grid-area: texts;
+    justify-self: center;
     position: sticky;
-    top: 20%;
+    top: 2rem;
+    align-self: start;
+
+    max-width: 45ch;
+
 }
 
 
-.textbody {
-    font-family: "Archivo", sans-serif;
-    font-size: 1rem;
-    grid-column: span 1;
-    position: sticky;
-    top: 20%;
-
-}
 .imagefull {
-    grid-column: span 3;
+    grid-area: full;
 }
 
 img {
