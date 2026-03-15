@@ -18,6 +18,12 @@ p {
 }
 
 
+h2 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
 .archivo-font> {
   font-family: "Archivo", sans-serif;
   font-optical-sizing: auto;
@@ -99,9 +105,7 @@ nav ul {
 
 .subheading {
     grid-area: title;
-    font-family: "Archivo", sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
+    
     
 }
 
