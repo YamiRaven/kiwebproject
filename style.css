@@ -45,12 +45,14 @@ header {
 nav li {
     list-style-type: none;
     font-family: "Archivo", sans-serif;
+    font-weight: 500;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0;
 }
 
 
@@ -58,7 +60,7 @@ nav ul {
 
 .layout {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 1fr 5fr;
     gap: 2rem;
     margin: 0 auto;
     padding: 2rem;
@@ -84,12 +86,23 @@ nav ul {
     list-style-type: none;
 }
 
+.sidebar ul {
+    padding: 0;
+}
+
 .overview {
     grid-area: overview;
 }
 
 .maincontent {
     grid-area: maincontent;
+}
+
+.adresse {
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .content-section {
@@ -100,6 +113,7 @@ nav ul {
         "title title"
         "images texts";
     gap: 2rem;
+    max-width: 100vw;
 }
 
 
@@ -121,7 +135,7 @@ nav ul {
     grid-area: texts;
     justify-self: center;
     position: sticky;
-    top: 6rem;
+    top: 4rem;
     align-self: start;
 
     max-width: 45ch;
@@ -144,3 +158,43 @@ img {
     height: auto;
     display: block;
 }
+
+/* mobile phon */
+@media screen and (max-width: 700px) {
+
+    .layout {
+        grid-template-columns: 150px 1fr;
+        grid-template-areas:
+            "sidebar" "overview"
+            "sidebar" "maincontent";
+    }
+    .content-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "texts"
+            "images";
+    }
+
+    .textside {
+        position: static;
+        justify-self: start;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        position: sticky;
+        top: 0;
+        align-self: start;
+    }
+    
+    .sidebar li {
+        margin-bottom: 1rem;
+        font-family: "Archivo", sans-serif;
+        font-weight: 600;
+        font-size: 0.875rem;
+        list-style-type: none;
+    }
+}
+
