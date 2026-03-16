@@ -94,6 +94,13 @@ nav ul {
     grid-area: overview;
 }
 
+.overview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+}
+
 .maincontent {
     grid-area: maincontent;
 }
