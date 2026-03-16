@@ -42,6 +42,12 @@ header {
 
 /* Navigation Bar */
 
+nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
 nav li {
     list-style-type: none;
     font-family: "Archivo", sans-serif;
@@ -72,6 +78,7 @@ nav ul {
 }
 
 .sidebar {
+    margin-top: 20px;
     grid-area: sidebar;
     position: sticky;
     top: 0;
@@ -79,7 +86,7 @@ nav ul {
 }
 
 .sidebar li {
-    margin-bottom: 1rem;
+    margin-top: 2rem;
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
@@ -170,7 +177,8 @@ img {
 @media screen and (max-width: 700px) {
 
     .layout {
-        grid-template-columns: 150px 1fr;
+        padding: 1rem;
+        grid-template-columns: 1fr 5fr;
         grid-template-areas:
             "sidebar" "overview"
             "sidebar" "maincontent";
