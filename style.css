@@ -44,6 +44,7 @@ header {
 
 nav {
     background-color: white;
+    height: 1rem;
     position: sticky;
     top: 0;
 }
@@ -57,6 +58,10 @@ nav li {
 nav ul {
     display: flex;
     flex-direction: row;
+    height: 40px;
+    border-bottom: 1px solid black;
+    background-color: white;
+    align-items: center;
     justify-content: space-around;
     padding: 0;
 }
@@ -77,8 +82,12 @@ nav ul {
     align-self: start;
 }
 
+.sidebar li:first-child {
+    margin-top: 50px;
+}
+
 .sidebar {
-    margin-top: 20px;
+    
     grid-area: sidebar;
     position: sticky;
     top: 0;
@@ -86,7 +95,7 @@ nav ul {
 }
 
 .sidebar li {
-    margin-top: 2rem;
+    /*margin-top: 2rem;*/
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
@@ -196,7 +205,7 @@ img {
         justify-self: start;
         max-width: 100%;
     }
-
+    
     .sidebar {
         grid-area: sidebar;
         position: sticky;
