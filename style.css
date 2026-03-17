@@ -96,7 +96,7 @@ nav ul {
 }
 
 .sidebar li {
-    /*margin-top: 2rem;*/
+    margin-bottom: 0.6rem;
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
@@ -107,6 +107,11 @@ nav ul {
     text-decoration: none;
     color: black;
 }
+
+.sidebar li a:hover {
+    font-weight: 800;
+}
+
 
 .sidebar ul {
     padding: 0;
