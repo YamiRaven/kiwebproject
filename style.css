@@ -143,9 +143,14 @@ nav ul {
 
 .subheading {
     grid-area: title;
-    
+    transition: all 0.3s ease;
     
 }
+.subheading.visible {
+    text-align: right;
+}
+
+
 
 
 .imageside {
