@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-family: "Archivo", sans-serif;
   font-weight: 600;
@@ -153,15 +157,14 @@ nav ul {
 
 .subheading {
     grid-area: title;
-    transition: all 0.3s ease;
-    
-}
-.subheading.visible {
-    text-align: right;
+    position: relative;
+    left: 0%;
+    transition: transform 1.5s ease-in-out;
 }
 
-
-
+.subheading.is-active {
+    transform: translateX(68%);
+}
 
 .imageside {
     grid-area: images;
