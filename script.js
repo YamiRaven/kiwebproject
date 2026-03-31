@@ -17,12 +17,14 @@ scroller
         }
     })
     
+    /*
     .onStepExit((response) => {
         const heading = response.element.querySelector(".subheading");
         if (heading) {
             heading.classList.add("is-inactive");
         }
     })
+    */
     ;
     
 
