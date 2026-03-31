@@ -1,3 +1,9 @@
+:root {
+    --widthlayout: calc(100vw - 6rem - 16px); /* full viewport - (2* layout padding + gap between aside and main + gap between imageside and textside) - 2* body margin*/
+    /*width layout is the width of the layout container with the grid content minus all the gaps (width of aside, imageside and textside)*/
+
+}
+
 
 * {
   box-sizing: border-box;
@@ -26,6 +32,7 @@ h2 {
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .archivo-font> {
@@ -146,25 +153,44 @@ nav ul {
 .content-section {
     display: grid;
     align-items: start;
+    grid-template-rows: 3.5rem 1fr;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
-        "title title"
+        ". texts"
         "images texts";
     gap: 2rem;
     max-width: 100vw;
+    
 }
 
 
 .subheading {
-    grid-area: title;
+    
     position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    transition: transform 1.5s ease-in-out;
+
+    
+    /*
     left: 0%;
+    transition: transform 1.5s ease-in-out;
+    */
+}
+
+.subheading.is-inactive {
+    /*transform: translateX(calc((calc((100vw - 6rem - 16px) /6 * 5)) / 3 * -2));*/
+    transform: translateX(calc(calc(var(--widthlayout) /6 *5) /3 * -2));
     transition: transform 1.5s ease-in-out;
 }
 
+
+/*
 .subheading.is-active {
     transform: translateX(68%);
 }
+
+*/
 
 .imageside {
     grid-area: images;
@@ -179,7 +205,7 @@ nav ul {
     position: sticky;
     top: 4rem;
     align-self: start;
-
+    
     max-width: 45ch;
 
 }
@@ -203,6 +229,9 @@ img {
 
 /* mobile phone */
 @media screen and (max-width: 800px) {
+
+
+
 
     header {
         padding: 0.5rem;
@@ -233,6 +262,20 @@ img {
         gap: 1rem;
         
     }
+
+    .subheading {
+        grid-area: title;
+        position: relative;
+        left: 0%;
+
+    }
+    
+    
+    .subheading.is-active {
+    transform: translateX(0);
+    }
+
+
 
     .textside {
         position: static;
