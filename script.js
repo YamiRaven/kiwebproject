@@ -13,7 +13,7 @@ scroller
     .onStepEnter((response) => {
         const heading = response.element.querySelector(".subheading");
         if (heading) {
-            //heading.classList.remove("is-inactive");
+            heading.classList.remove("is-inactive");
         }
     })
     
@@ -31,3 +31,5 @@ scroller
 window.addEventListener("resize", () => {
     scroller.resize();
 });
+
+

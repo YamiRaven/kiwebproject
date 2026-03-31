@@ -1,8 +1,9 @@
 :root {
-    --widthlayout: calc(100vw - 4rem - 16px); /* full viewport - (2* layout padding + gap between aside and main + gap between imageside and textside) - 2* body margin*/
+    --widthlayout: calc(100vw - 4rem); /* full viewport - (2* layout padding + gap between aside and main + gap between imageside and textside) - 2* body margin*/
     /*width layout is the width of the layout container with the grid content minus all the gaps (width of aside, imageside and textside)*/
     --widthmain: calc(calc(var(--widthlayout) - 2rem) /6 * 5);
-    --widthtexts: calc(var(--widthmain) /3 * -2);
+    --widthtexts: calc(calc(var(--widthmain) /3 * -2 ) - 1rem);
+    
 }
 
 
@@ -12,6 +13,8 @@
 
 body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -87,7 +90,7 @@ nav ul {
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 2rem;
-    margin: 0 auto;
+    margin: 0;
     padding: 2rem;
     width: 100vw;
     grid-template-areas:
@@ -160,7 +163,7 @@ nav ul {
     grid-template-areas:
         ". texts"
         "images texts";
-    gap: 2rem;
+    gap: 0rem;
     width: 100%;
     
 }
@@ -168,7 +171,6 @@ nav ul {
 
 .subheading {
     
-    position: relative;
     margin-top: 0;
     padding-top: 0;
     transition: transform 1.5s ease-in-out;
@@ -199,16 +201,16 @@ nav ul {
     grid-area: images;
     display: grid;
     gap: 1rem;
+    padding-right: 1rem;
 
 }
 
 .textside {
     grid-area: texts;
-    justify-self: center;
     position: sticky;
     top: 4rem;
     align-self: start;
-    
+    padding-left: 1rem;
     max-width: 45ch;
 
 }
@@ -305,6 +307,11 @@ footer a {
         position: static;
         justify-self: start;
         max-width: 100%;
+        padding-left: 0;
+    }
+
+    .imageside {
+        padding-right: 0;
     }
     
     .sidebar {
