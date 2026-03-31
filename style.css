@@ -1,7 +1,8 @@
 :root {
-    --widthlayout: calc(100vw - 6rem - 16px); /* full viewport - (2* layout padding + gap between aside and main + gap between imageside and textside) - 2* body margin*/
+    --widthlayout: calc(100vw - 4rem - 16px); /* full viewport - (2* layout padding + gap between aside and main + gap between imageside and textside) - 2* body margin*/
     /*width layout is the width of the layout container with the grid content minus all the gaps (width of aside, imageside and textside)*/
-
+    --widthmain: calc(calc(var(--widthlayout) - 2rem) /6 * 5);
+    --widthtexts: calc(var(--widthmain) /3 * -2);
 }
 
 
@@ -88,7 +89,7 @@ nav ul {
     gap: 2rem;
     margin: 0 auto;
     padding: 2rem;
-    max-width: 100vw;
+    width: 100vw;
     grid-template-areas:
         "sidebar overview"
         "sidebar maincontent"; 
@@ -160,7 +161,7 @@ nav ul {
         ". texts"
         "images texts";
     gap: 2rem;
-    max-width: 100vw;
+    width: 100%;
     
 }
 
@@ -181,7 +182,7 @@ nav ul {
 
 .subheading.is-inactive {
     /*transform: translateX(calc((calc((100vw - 6rem - 16px) /6 * 5)) / 3 * -2));*/
-    transform: translateX(calc(calc(var(--widthlayout) /6 * 5) /3 * -2));
+    transform: translateX(var(--widthtexts));
     transition: transform 1.5s ease-in-out;
     margin-left: 0;
 }
