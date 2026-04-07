@@ -241,6 +241,11 @@ footer a {
 
 }
 
+footer h3 {
+    font-family: "Archivo", sans-serif;
+    font-size: 1.25rem;
+}
+
 .contactdetails a:hover {
     text-decoration: none;
     font-weight: 800;
