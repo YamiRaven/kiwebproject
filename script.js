@@ -1,7 +1,9 @@
 const subElems = document.querySelectorAll(".subheading");
 const scroller = scrollama();
 
-
+// Impressum items
+let impHeader = document.getElementById("impheader");
+let impBody = document.getElementById("impbody");
 
 scroller.setup({
     step: ".content-section",
@@ -33,3 +35,15 @@ window.addEventListener("resize", () => {
 });
 
 
+// Impressum Click to expand
+impHeader.addEventListener("click", function() {
+    if (impBody.style.color === "white") {
+        impBody.style.height = "auto";
+        impBody.style.color = "black";
+    } else {
+        impBody.style.height = 0;
+        impBody.style.color = "white";
+    }
+
+
+})

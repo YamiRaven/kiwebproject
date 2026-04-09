@@ -168,6 +168,9 @@ nav ul {
     
 }
 
+.divider {
+    height: 3rem;
+}
 
 .subheading {
     
@@ -232,6 +235,33 @@ img {
     display: block;
 }
 
+footer {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logobottom kontakt impressum";  
+    border-top: 1px solid black;   
+}
+
+.logobottom {
+    grid-area: logobottom;
+    justify-self: center;
+    /*transform: translateY(25px);*/
+    align-self: start;
+    z-index: 100;
+    scale: 75%;
+}
+
+
+.contactdetails {
+    grid-area: kontakt;
+}
+
+
+.impressum {
+    grid-area: impressum; 
+}
+    
 
 footer a {
     text-decoration: none;
@@ -251,8 +281,6 @@ footer h3 {
     font-weight: 800;
 
 }
-
-
 
 
 /* mobile phone */
@@ -275,28 +303,42 @@ footer h3 {
         margin-block-start: 0.5rem;
     }
 
+
+
     .layout {
         display: grid;
-        padding: 1rem;
         grid-template-columns: 1fr;
         grid-template-areas:
             "overview"
             "maincontent";
+        gap: 0;
     }
     .content-section {
         grid-template-columns: 1fr;
+        grid-template-rows: 3.5rem 1fr;
         grid-template-areas:
             "title"
             "texts"
             "images";
-        gap: 1rem;
+        gap: 0rem;
         
+        
+    }
+
+    .divider  {
+        height: 0;
+        margin: 0;
     }
 
     .subheading {
         grid-area: title;
         position: relative;
         left: 0%;
+        margin-bottom: 2rem;
+        
+        
+        
+        
 
     }
     
@@ -324,7 +366,7 @@ footer h3 {
     }
 
     .imagefull {
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 1rem;
     
 }
 
@@ -344,5 +386,44 @@ footer h3 {
         list-style-type: none;
     }
     */
+
+    footer {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "impressum impressum" "kontakt logobottom";   
+    }
+
+    .logobottom {
+        margin-top: 3rem;
+        grid-area: logobottom;
+        justify-self: center;
+        align-self: center;
+        
+    }
+
+
+    .contactdetails {
+        grid-area: kontakt;   
+    }
+
+    .contactdetails h3 {
+        margin-top: 0.5rem;
+    }
+
+    .impressum {
+        grid-area: impressum; 
+    }
+
+    .impressum p {
+        padding-bottom: 1rem;
+    }
+
+    #impbody {
+        height: 0;
+        margin: 0;
+        color: white;
+    }
+
 }
 
